@@ -1,0 +1,23 @@
+create database cliente; 
+
+use cliente;
+
+create table cliente(
+idNome  INT(10) not null auto_increment primary key,
+nome varchar(35)  not null,
+sobreNome varchar(35)  not null,
+cpf varchar(35)  not null,
+rg varchar(35)  not null,
+telefone varchar(35)  not null,
+email varchar(35)  not null,
+data varchar(20)  not null
+);
+
+create table login(
+idLogin int(11) not null auto_increment primary key,
+usuario varchar(15)  not null,
+senha varchar(32)  not null
+);
+
+
+INSERT INTO `login` (`usuario`, `senha`) VALUES( 'admin', 123);
