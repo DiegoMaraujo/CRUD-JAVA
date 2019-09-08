@@ -86,6 +86,7 @@ public class cliente extends javax.swing.JFrame {
         btnExcluir = new javax.swing.JButton();
         btnlimpar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
+        btnListaCliente = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblConsulta3 = new javax.swing.JTable();
@@ -314,23 +315,36 @@ public class cliente extends javax.swing.JFrame {
                 btnSairMouseClicked(evt);
             }
         });
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+
+        btnListaCliente.setText("Listas Clientes");
+        btnListaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnListaCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,7 +355,8 @@ public class cliente extends javax.swing.JFrame {
                     .addComponent(btnAlterar)
                     .addComponent(btnExcluir)
                     .addComponent(btnlimpar)
-                    .addComponent(btnSair))
+                    .addComponent(btnSair)
+                    .addComponent(btnListaCliente))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -635,33 +650,7 @@ public class cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"ERRO"+ ex.getMessage());
 
         }
-        /*
-         List<ClienteBean> listaCliente = new ArrayList<ClienteBean>();
-         listaCliente = cd.listarTodo();
-         
-         DefaultTableModel tbm =(DefaultTableModel)tblConsulta3.getModel();
-            
-         for(int i = tbm.getRowCount()-1; i >= 0; i--){
-            tbm.removeRow(i);
-        }
 
-        int i = 0;
-        
-        for(ClienteBean cb: listaCliente){
-            
-            tbm.addRow(new String[1]);
-            
-            tblConsulta3.setValueAt(cb.getIdNome(), i, 0);
-            tblConsulta3.setValueAt(cb.getNome(), i, 1);
-            tblConsulta3.setValueAt(cb.getSobreNome(), i, 2);
-            tblConsulta3.setValueAt(cb.getCpf(), i, 3);
-            tblConsulta3.setValueAt(cb.getRg(), i, 4);
-            tblConsulta3.setValueAt(cb.getTelefone(), i, 5);
-            tblConsulta3.setValueAt(cb.getEmail(), i, 6);
-            tblConsulta3.setValueAt(cb.getData(), i, 7);
-           
-            i++;
-        }*/
     }//GEN-LAST:event_btnPesMouseClicked
 
     private void btnSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseClicked
@@ -689,6 +678,16 @@ public class cliente extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
+
+    private void btnListaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaClienteActionPerformed
+        // TODO add your handling code here:
+            new listaCliente().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_btnListaClienteActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -729,6 +728,7 @@ public class cliente extends javax.swing.JFrame {
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnInserir;
+    private javax.swing.JButton btnListaCliente;
     private javax.swing.JButton btnPes;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnlimpar;
